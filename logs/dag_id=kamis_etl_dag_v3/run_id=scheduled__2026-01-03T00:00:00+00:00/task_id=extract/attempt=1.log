@@ -1,0 +1,14 @@
+{"timestamp":"2026-01-19T19:02:25.659174Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-01-19T19:02:25.660138Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/kamis_etl_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-01-19T19:02:25.716559Z","level":"warning","event":"The `airflow.decorators.dag` attribute is deprecated. Please use `'airflow.sdk.dag'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/kamis_etl_dag.py","lineno":16,"logger":"py.warnings"}
+{"timestamp":"2026-01-19T19:02:25.716715Z","level":"warning","event":"The `airflow.decorators.task` attribute is deprecated. Please use `'airflow.sdk.task'`.","category":"DeprecatedImportWarning","filename":"/opt/airflow/dags/kamis_etl_dag.py","lineno":16,"logger":"py.warnings"}
+{"timestamp":"2026-01-19T19:02:25.742417Z","level":"info","event":"Starting scrape","logger":"root","filename":"kamis_etl_dag.py","lineno":49}
+{"timestamp":"2026-01-19T19:02:25.743059Z","level":"info","event":"Scraping offset 0","logger":"root","filename":"kamis_scraper.py","lineno":20}
+{"timestamp":"2026-01-19T19:02:25.745768Z","level":"info","event":"Scraping offset 3000","logger":"root","filename":"kamis_scraper.py","lineno":20}
+{"timestamp":"2026-01-19T19:02:25.750741Z","level":"info","event":"Scraping offset 6000","logger":"root","filename":"kamis_scraper.py","lineno":20}
+{"timestamp":"2026-01-19T19:02:25.752570Z","level":"info","event":"Scraping offset 9000","logger":"root","filename":"kamis_scraper.py","lineno":20}
+{"timestamp":"2026-01-19T19:02:25.754210Z","level":"info","event":"Scraping offset 12000","logger":"root","filename":"kamis_scraper.py","lineno":20}
+{"timestamp":"2026-01-19T19:07:34.339391Z","level":"error","event":"Scrape error @ 12000: HTTPSConnectionPool(host='kamis.kilimo.go.ke', port=443): Read timed out. (read timeout=300)","logger":"root","filename":"kamis_scraper.py","lineno":36}
+{"timestamp":"2026-01-19T19:07:34.363760Z","level":"error","event":"Scrape error @ 6000: HTTPSConnectionPool(host='kamis.kilimo.go.ke', port=443): Read timed out. (read timeout=300)","logger":"root","filename":"kamis_scraper.py","lineno":36}
+{"timestamp":"2026-01-19T19:07:34.371245Z","level":"error","event":"Scrape error @ 3000: HTTPSConnectionPool(host='kamis.kilimo.go.ke', port=443): Read timed out. (read timeout=300)","logger":"root","filename":"kamis_scraper.py","lineno":36}
+{"timestamp":"2026-01-19T19:07:34.376298Z","level":"error","event":"Scrape error @ 9000: HTTPSConnectionPool(host='kamis.kilimo.go.ke', port=443): Read timed out. (read timeout=300)","logger":"root","filename":"kamis_scraper.py","lineno":36}
