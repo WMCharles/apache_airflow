@@ -1,0 +1,4 @@
+.gitnexus
+logs/
+__pycache__/
+*.pyc

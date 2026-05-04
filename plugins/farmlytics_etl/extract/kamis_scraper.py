@@ -3,10 +3,13 @@ from io import StringIO
 import pandas as pd
 import requests
 import logging
+import urllib3
 import os
 
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-def scrape_market_page(page_index):
+
+def scrape_market_page(page_index, output_path=INPUT_PATH):
     offset = page_index * 3000
     url = f"https://kamis.kilimo.go.ke/site/market_search"
 
@@ -18,17 +21,17 @@ def scrape_market_page(page_index):
 
     try:
         logging.info(f"Scraping offset {offset}")
-        res = requests.get(url, params=params, timeout=300)
+        res = requests.get(url, params=params, timeout=300, verify=False)
         res.raise_for_status()
 
         tables = pd.read_html(StringIO(res.text))
         if tables and not tables[0].empty:
             df = tables[0]
             df.to_csv(
-                INPUT_PATH,
+                output_path,
                 mode='a',
                 index=False,
-                header=not os.path.exists(INPUT_PATH),
+                header=not os.path.exists(output_path),
                 encoding='utf-8'
             )
             return len(df)

@@ -75,6 +75,7 @@ x-airflow-common:
 # Inside your docker-compose.yaml
     _PIP_ADDITIONAL_REQUIREMENTS: "apache-airflow-providers-postgres"  # Change 'postgres' to your DB    # The following line can be used to set a custom config file, stored in the local config folder
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    AIRFLOW_CONN_FARMLYTICS_POSTGRES: 'postgresql://postgres:hsgahwsb23%40@kifaru-db:5432/farmlytics'
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags:z
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs:z
